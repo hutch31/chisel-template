@@ -1,11 +1,11 @@
-Chisel Project Template
-=======================
+Chisel Project Template for Maven
+=================================
 
-You've done the Chisel [tutorials](https://github.com/ucb-bar/chisel-tutorial), and now you 
+You've done the Chisel [tutorials](https://github.com/ucb-bar/chisel-tutorial), and now you
 are ready to start your own chisel project.  The following procedure should get you started
 with a clean running [Chisel3](https://github.com/freechipsproject/chisel3) project.
 
-> More and more users are finding IntelliJ to be a powerful tool for Chisel coding. See the 
+> More and more users are finding IntelliJ to be a powerful tool for Chisel coding. See the
 [IntelliJ Installation Guide](https://github.com/ucb-bar/chisel-template/wiki/IntelliJ-Installation-Guide) for how to install it.
 
 ## Make your own Chisel3 project
@@ -21,7 +21,7 @@ cd MyChiselProject
 ### Make your project into a fresh git repo
 There may be more elegant way to do it, but the following works for me. **Note:** this project comes with a magnificent 339 line (at this writing) .gitignore file.
  You may want to edit that first in case we missed something, whack away at it, or start it from scratch.
- 
+
 #### Clear out the old git stuff
 ```sh
 rm -rf .git
@@ -31,7 +31,7 @@ git add .gitignore *
 
 #### Rename project in build.sbt file
 Use your favorite text editor to change the first line of the **build.sbt** file
-(it ships as ```name := "chisel-module-template"```) to correspond 
+(it ships as ```name := "chisel-module-template"```) to correspond
 to your project.<br/>
 Perhaps as ```name := "my-chisel-project"```
 
@@ -48,12 +48,10 @@ Connecting this up to github or some other remote host is an exercise left to th
 ### Did it work?
 You should now have a project based on Chisel3 that can be run.<br/>
 So go for it, at the command line in the project root.
-```sh
-sbt 'testOnly gcd.GCDTester -- -z Basic'
+```mvn test
 ```
->This tells the test harness to only run the test in GCDTester that contains the word Basic
-There are a number of other examples of ways to run tests in there, but we just want to see that
-one works.
+>This will run all tests found under src/test/scala
+
 
 You should see a whole bunch of output that ends with something like the following lines
 ```
@@ -93,16 +91,6 @@ There are [instructions for generating Verilog](https://github.com/freechipsproj
 
 Some backends (verilator for example) produce VCD files by default, while other backends (firrtl and treadle) do not.
 You can control the generation of VCD files with the `--generate-vcd-output` flag.
-
-To run the simulation and generate a VCD output file regardless of the backend:
-```bash
-sbt 'test:runMain gcd.GCDMain --generate-vcd-output on'
-```
-
-To run the simulation and suppress the generation of a VCD output file:
-```bash
-sbt 'test:runMain gcd.GCDMain --generate-vcd-output off'
-```
 
 ## Development/Bug Fixes
 This is the release version of chisel-template. If you have bug fixes or
