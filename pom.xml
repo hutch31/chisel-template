@@ -37,12 +37,14 @@
       <artifactId>chisel3_2.12</artifactId>
       <version>3.4.2</version>
     </dependency>
+    
 
-    <!-- https://mvnrepository.com/artifact/edu.berkeley.cs/chisel-iotesters -->
+    <!-- https://mvnrepository.com/artifact/edu.berkeley.cs/chiseltest -->
     <dependency>
-        <groupId>edu.berkeley.cs</groupId>
-        <artifactId>chisel-iotesters_2.12</artifactId>
-        <version>1.5.2</version>
+      <groupId>edu.berkeley.cs</groupId>
+      <artifactId>chiseltest_2.12</artifactId>
+      <version>0.3.2</version>
+      <scope>test</scope>
     </dependency>
 
 
